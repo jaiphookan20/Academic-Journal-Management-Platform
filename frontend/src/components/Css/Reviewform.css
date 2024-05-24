@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #0a0000;
+    padding: 8px;
+    text-align: left;
+    padding-left: 10px;
+}
+th{
+    width:350px;
+}
+
+.review-textarea{
+    resize: "none";
+}
+
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px;
+    width: 1350px;
+    background: #f3e7e7;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}

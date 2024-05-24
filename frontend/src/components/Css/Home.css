@@ -1,0 +1,86 @@
+.home-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .7)), url(../../assets/background.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: -1; /* Send it behind other content */
+}
+
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #963737;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .announcement {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .stay-tuned {
+    font-size: 1.5em;
+    font-weight: bold; 
+  }
+  
+  .launching-soon {
+    font-size: 1em; 
+    margin-top: 40px;
+  }
+
+  
+  @keyframes slideInText {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(-30vh); /* Adjust the percentage as needed */
+      opacity: 1;
+    }
+  }
+  
+  /* Apply sliding animation to text */
+  .sliding-text {
+    position: absolute;
+    top: 50%;
+    left:37%;
+    transform: translate(-50%, -50%);
+    animation: slideInText 1s ease forwards;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 1;
+    color: #333; /* Set text color */
+  }
+  
+  .content-above-footer {
+    padding: 20px;
+    position: absolute; /* Positioning */
+    bottom: 60px; /* Distance from the bottom */
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Above footer */
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #963737;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }

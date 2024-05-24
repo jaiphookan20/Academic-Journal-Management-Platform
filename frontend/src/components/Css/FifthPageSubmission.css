@@ -1,0 +1,50 @@
+/* FifthPageSubmission.css */
+
+.container-fifthpage {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    color: #333;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 1rem;
+  }
+  
+  .summary {
+    padding: 0.5rem 0;
+  }
+  
+  .summary p {
+    margin: 0.5rem 0;
+    color: #666;
+  }
+  
+  .author-card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .author-card p {
+    margin: 0.25rem 0;
+  }
+  
+  .detail {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .conflict-section {
+    padding: 1rem 0;
+    color: #666;
+  }
+  

@@ -1,0 +1,45 @@
+.login {
+    color: rgb(255, 255, 255);
+    background-color: #963737;
+    border: none; 
+    padding: 5px 10px; 
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px; 
+    cursor: pointer;
+  }
+
+  .nav-button {
+    color: #fff; /* Use shorthand for white color */
+    background-color: #963737; /* Background color */
+    border: none; /* Remove default border */
+    padding: 7px 14px; /* Padding for button size */
+    margin: 0 10px; /* Combine left and right margins */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 12px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline from text */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  }
+  
+  .nav-button:hover {
+    background-color: #693030; /* Slightly lighter background on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }
+  
+  .nav-button:active {
+    background-color: #7a2a2a; /* Darker background on click */
+    transform: scale(0.98); /* Slightly shrink button on click */
+  }
+  
+  .nav-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(150, 55, 55, 0.5); /* Custom focus outline */
+  }
+
+.welcome {
+  font-size: 20px;
+}
+

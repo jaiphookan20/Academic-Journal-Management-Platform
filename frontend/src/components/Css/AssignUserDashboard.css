@@ -1,0 +1,49 @@
+.unassign-button {
+  background-color: #963737;
+  color: white;
+}
+.assign-button {
+  background-color: #4CAF50;
+  color: white;
+}
+.assignment-button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:5px;
+  margin-right: 5px;
+  cursor: pointer;
+  width: 23%;
+  transition: all ease 0.3s;
+}
+
+.assignment-button:hover {
+  background-color: #dadada;
+  color: black;
+
+}
+
+.search-button {
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: #963737;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container p {
+  margin: 0; 
+}

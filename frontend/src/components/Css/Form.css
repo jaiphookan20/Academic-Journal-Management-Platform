@@ -1,0 +1,27 @@
+/* Form.css */
+
+.container-form {
+    width: 100%;
+    padding: 20px;
+    padding-top: 5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .container-form {
+        padding: 10px;
+        padding-top: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-form {
+        padding: 5px;
+        padding-top: 2rem;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

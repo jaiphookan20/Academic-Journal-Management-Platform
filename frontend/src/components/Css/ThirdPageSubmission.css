@@ -1,0 +1,52 @@
+.upload-container {
+    padding: 20px;
+  }
+  
+  .upload-section {
+    margin-bottom: 20px;
+  }
+  
+  .upload-header {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .file-input, .document-type-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .files-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .files-table th, .files-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .files-table th {
+    background-color: #eee;
+    color: #333;
+  }
+
+.add-file {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    background-color: #6f141b;
+    color: #ffffff; 
+    padding: 5px 10px; 
+    border: 1px solid #ccc; 
+    cursor: pointer; 
+}
+
+.add-file:hover {
+    background-color: #901b25;
+}
+
+  
