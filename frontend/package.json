@@ -1,0 +1,74 @@
+{
+  "name": "si-koala",
+  "version": "1.0.0",
+  "options": {
+    "allowedHosts": [
+      "localhost",
+      ".localhost"
+    ],
+    "proxy": "https://localhost:3000/"
+  },
+  "description": "This project aims to construct an all-encompassing digital platform for the submission and evaluation of scholarly articles for Studies in Language Assessment (SiLA), which is the official peer-reviewed publication of the Association for Language Testing and Assessment of New Zealand (ALTAANZ). The platform endeavors to optimize the workflow for submitting and reviewing manuscripts, elevate the quality of the user experience, and increase the transparency and efficacy of editorial decision-making. <br> Our team is responsible for eliminating most of the manual processes that the SiLA team currently works on for the submission and review of the manuscripts. We have to make a portal that involves creating different users as well as the capabilities for tracking the respective submissions and reviews for the users. All the Epics and the User stories can be found on the following [LINK](https://comp90082-2024-si-koala.atlassian.net/jira/software/projects/SIKOALA/boards/1/timeline). We will be adding more subtasks in the User Stories as we start developing and start working on the Tasks.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "@mui/icons-material": "^5.15.14",
+    "@mui/material": "^5.15.14",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "file-saver": "^2.0.5",
+    "js-cookie": "^3.0.5",
+    "pdfjs-dist": "^2.16.105",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-rnd": "^10.4.10",
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
+    "react-simple-typewriter": "^5.0.1",
+    "react-tooltip": "^5.26.4",
+    "react-tsparticles": "^2.11.0",
+    "reactjs-popup": "^2.0.6",
+    "tsparticles-slim": "^2.11.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "tailwindcss": "^3.3.3"
+  }
+}
