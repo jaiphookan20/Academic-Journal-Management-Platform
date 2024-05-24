@@ -1,0 +1,46 @@
+name: Backend Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize]
+    paths:
+      - 'backend/**'
+
+jobs:
+  backend-tests:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Test Database
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ap-southeast-2
+        DB_NAME: sila_test_db
+      run: |
+        AWS_SECRETS_MANAGER=$(aws cloudformation describe-stacks --stack-name Sila --query \
+          'Stacks[0].Outputs[?OutputKey==`MASTERSECRETNAME`].OutputValue' --output text)
+        
+        DB_HOST=$(aws secretsmanager get-secret-value --secret-id $AWS_SECRETS_MANAGER --query \
+          'SecretString' --output text | jq -r '.host')
+        DB_USER=$(aws secretsmanager get-secret-value --secret-id $AWS_SECRETS_MANAGER --query \
+          'SecretString' --output text | jq -r '.username')
+        DB_PASSWORD=$(aws secretsmanager get-secret-value --secret-id $AWS_SECRETS_MANAGER --query \
+          'SecretString' --output text | jq -r '.password')
+        
+        echo "DB_HOST=\"$DB_HOST\"" > data/.env
+        echo "MYSQL_USER=\"$DB_USER\"" >> data/.env
+        echo "MYSQL_PWD=\"$DB_PASSWORD\"" >> data/.env
+
+        cd data/
+        bash setup_db.sh $DB_NAME
+
+    - name: Run Test Case
+      run: |
+        echo "This is where npm test would be executed with using sila_test_db as the source"
+

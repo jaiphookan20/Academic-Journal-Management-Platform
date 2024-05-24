@@ -1,0 +1,41 @@
+# Deploys views user data/views to production database
+
+name: MySQL Deploy Prod
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/views/**'
+  workflow_dispatch:
+
+jobs:
+  deploy_mysql:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Credentials Database
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-southeast-2
+        run: |
+          AWS_SECRETS_MANAGER=$(aws cloudformation describe-stacks --stack-name Sila --query \
+            'Stacks[0].Outputs[?OutputKey==`MASTERSECRETNAME`].OutputValue' --output text)
+          
+          echo "DB_HOST=\"$(aws secretsmanager get-secret-value --secret-id $AWS_SECRETS_MANAGER --query \
+            'SecretString' --output text | jq -r '.host')\"" > data/.env
+          echo "MYSQL_USER=\"$(aws secretsmanager get-secret-value --secret-id $AWS_SECRETS_MANAGER --query \
+            'SecretString' --output text | jq -r '.username')\"" >> data/.env
+          echo "MYSQL_PWD=\"$(aws secretsmanager get-secret-value --secret-id $AWS_SECRETS_MANAGER --query \
+            'SecretString' --output text | jq -r '.password')\"" >> data/.env
+          echo "DB_NAME=sila_prod_db" >> data/.env
+      
+      - name: Deploy views prod
+        run: |
+          cd data/ && bash deploy_views.sh
+

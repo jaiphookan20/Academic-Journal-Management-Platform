@@ -1,0 +1,33 @@
+name: AWS Deployment
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'aws/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install CDK dependencies
+      run: |
+        npm install -g aws-cdk
+        pip install -r aws/requirements.txt
+
+    - name: Deploy AWS CDK stack
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ap-southeast-2
+      run: |
+        cd aws
+        cdk bootstrap
+        cdk deploy --require-approval never
+
