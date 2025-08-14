@@ -1,6 +1,6 @@
 # Academic Journal Management Platform (AJMP)
 
-A comprehensive digital platform designed to streamline the submission, peer review, and editorial management processes for academic journals. Built specifically for Studies in Language Assessment (SiLA), the official peer-reviewed publication of the Association for Language Testing and Assessment of New Zealand (ALTAANZ).
+A digital platform designed to streamline the submission, peer review, and editorial management processes for academic journals. Built specifically for Studies in Language Assessment (SiLA), the official peer-reviewed publication of the Association for Language Testing and Assessment of New Zealand (ALTAANZ), attached to the University of Melbourne
 
 ## Table of Contents
 - [Overview](#overview)
@@ -13,10 +13,6 @@ A comprehensive digital platform designed to streamline the submission, peer rev
 - [Running the Application](#running-the-application)
 - [Project Structure](#project-structure)
 - [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
@@ -60,32 +56,6 @@ The Academic Journal Management Platform revolutionizes the traditional manuscri
 - **Email Integration**: Automated notifications for all critical workflow events
 - **Responsive Design**: Full mobile and tablet compatibility
 - **Advanced Search**: Comprehensive filtering and search capabilities across submissions
-
-## Technology Stack
-
-### Frontend
-- **Framework**: React 18.2.0
-- **Routing**: React Router DOM 6.14.2
-- **UI Components**: Material-UI 5.15.14, React Bootstrap 2.10.2
-- **State Management**: React Context API
-- **HTTP Client**: Axios 1.6.8
-- **PDF Handling**: PDF.js 2.16.105
-- **Authentication**: JWT with js-cookie 3.0.5
-
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js 4.19.2
-- **Database**: MySQL 8.0 with Sequelize ORM 6.37.3
-- **Authentication**: JWT (jsonwebtoken 9.0.2) with bcrypt 5.1.1
-- **File Upload**: Multer 1.4.5
-- **Email Service**: Nodemailer 6.9.13
-- **API Security**: CORS 2.8.5
-
-### Infrastructure
-- **Cloud Provider**: AWS
-- **Infrastructure as Code**: AWS CDK
-- **Storage**: AWS S3 for manuscript files
-- **Database**: MySQL with optimized views for reporting
 
 ## System Architecture
 
@@ -302,67 +272,6 @@ npm test  # Run tests in interactive mode
 npm test -- --coverage  # Generate coverage report
 ```
 
-## Deployment
-
-### AWS Deployment using CDK
-
-1. Install AWS CDK:
-```bash
-npm install -g aws-cdk
-```
-
-2. Configure AWS credentials:
-```bash
-aws configure
-```
-
-3. Deploy infrastructure:
-```bash
-cd aws
-pip install -r requirements.txt
-cdk bootstrap
-cdk deploy
-```
-
-### Docker Deployment (Alternative)
-
-Create a `docker-compose.yml` file for containerized deployment:
-```yaml
-version: '3.8'
-services:
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-  backend:
-    build: ./backend
-    ports:
-      - "8080:8080"
-    environment:
-      - NODE_ENV=production
-  db:
-    image: mysql:8.0
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=sila_dev_db
-    volumes:
-      - db_data:/var/lib/mysql
-volumes:
-  db_data:
-```
-
-## Contributing
-
-We welcome contributions to improve the Academic Journal Management Platform. Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and development process.
-
 ## Security Considerations
 
 - All passwords are hashed using bcrypt with salt rounds
@@ -382,41 +291,3 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 - API response caching where appropriate
 - Pagination for large data sets
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Database Connection Error**
-   - Verify MySQL is running
-   - Check database credentials in .env file
-   - Ensure database exists and user has proper permissions
-
-2. **Port Already in Use**
-   - Change port in backend/server.js or frontend package.json
-   - Kill existing process using the port
-
-3. **Module Not Found**
-   - Run `npm install` in the respective directory
-   - Clear npm cache: `npm cache clean --force`
-
-## Support
-
-For issues, questions, or suggestions:
-- Create an issue on [GitHub](https://github.com/jaiphookan20/Academic-Journal-Management-Platform/issues)
-- Contact the development team
-
-## License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Studies in Language Assessment (SiLA)
-- Association for Language Testing and Assessment of New Zealand (ALTAANZ)
-- All contributors who have helped shape this platform
-
----
-
-**Version**: 1.0.0  
-**Last Updated**: 2024  
-**Maintained By**: SI-Koala Team
